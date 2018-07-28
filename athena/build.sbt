@@ -15,6 +15,11 @@ libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2
 libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 libraryDependencies += ws
 libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "3.0.0"
+//libraryDependencies += "com.github.tminglei" %% "slick-pg" % "0.16.2"
+//libraryDependencies += "com.github.tototoshi" %% "slick-joda-mapper" % "2.3.0"
+libraryDependencies +="org.joda" % "joda-convert" % "1.7"
+//libraryDependencies +="com.github.tototoshi" %% "slick-joda-mapper" % "1.2.0"
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "org.athena.controllers._"
 

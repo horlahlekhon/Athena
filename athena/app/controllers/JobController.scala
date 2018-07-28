@@ -48,4 +48,28 @@ def index = Action{
 //     implicit request => 
 //     Ok(views.html.jobIndex())
 // }
+def jobProfile = Action{
+    implicit request => 
+    Ok(views.html.jobProfile())
+  }
+
+//   def addJob = Action{
+//       implicit request => 
+//       val fm = jobForm.bindFromRequest
+//       fm.fold(
+//           hasError => {
+//               BadRequest(views.html.index(hasError))
+//           },
+//           success => {
+//               val startDate = new DateTime(success.jobStart)
+//               val endDate = new DateTime(success.jobEnd)
+
+//              // val job = addJob(success)
+//               Redirect(views.html.index(jobForm))
+//           }
+//       )
+//   }
+
+  
+
            }

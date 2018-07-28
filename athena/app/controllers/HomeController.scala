@@ -38,20 +38,32 @@ class HomeController @Inject()(cc: ControllerComponents,user:User) extends Abstr
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
+//firstName:String,lastName:String,password:String,email:String
+   val userForm:Form[User] = Form(
+     mapping(
+       "firstName" -> nonEmptyText,
+       "lastName" -> nonEmptyText,
+       "password" -> nonEmptyText,
+       "email" -> email)(User.apply)(User.unapply)
 
-   val userForm:Form[User] = 
-      Form(
-          mapping(
-            "firstName" -> nonEmptyText,
-            "lastName" -> nonEmptyText,
-            "password" -> nonEmptyText,
-            "email" -> email)
-          )(User.apply)(User.unapply)
-    
-
-
+     )
 
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index(userForm))
   }
-}
+
+// def addUser = Action{
+//   implicit request =>
+//   var formData = userForm.bindFromRequest
+//   formData.fold(
+//     hasError => {
+//       BadRequest(views.html.index(hasError))
+//     },
+//     success => {
+//       //val user = addUser(Success)
+//       Redirect(views.html.index(userForm))
+//       //.flashing("success" -> Messages("success.insert")))
+//     }
+//       )
+// }
+}  
